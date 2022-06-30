@@ -1,0 +1,29 @@
+<nav class="navbar navbar-light bg-info">
+  <a class="navbar-brand col-12" id="nomeServico">Gerencia Serviço</a>
+  <div *ngIf="user$ | async as user">
+    <div *ngIf="user.email; else login">
+      <i class="fa fa-user-circle" id="faUsuario">
+        <a id="nomeUsuario">{{ user.email }}</a>
+      </i>
+    </div>
+
+      <div *ngIf="user.descricaoPermissao == 'ADMINISTRADOR'; else area">
+        <a id="nomePermissao"> {{ user.descricaoPermissao }}</a>
+      </div>
+
+
+    <ng-template #area>
+      <i class="fa fa-map-marker" id="faArea">
+      <a id="nomeArea">{{ user.nomeArea }}</a>
+    </i>
+    </ng-template>
+
+  </div>
+  <button id="btnSair"><a (click)="logout()">Sair</a></button>
+</nav>
+
+<ng-template #login>
+  <span class="navbar-text">
+    <a [routerLink]="['']">Login</a>
+  </span>
+</ng-template>

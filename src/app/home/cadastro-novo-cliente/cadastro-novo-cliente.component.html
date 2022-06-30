@@ -1,0 +1,143 @@
+<div class="form_wrapper">
+  <div class="form_container">
+    <div class="title_container">
+      <h2>Cadastre-se</h2>
+    </div>
+    <div class="row clearfix">
+      <div class="">
+        <form [formGroup]="novoUsuarioForm" (submit)="cadastrar()">
+          <div class="input_field">
+            <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              required
+              formControlName="email"
+            />
+            <app-mensagem
+              *ngIf="
+                novoUsuarioForm.get('email')?.errors?.['required'] &&
+                novoUsuarioForm.get('email')?.touched
+              "
+              mensagem="Email obrigatório"
+            ></app-mensagem>
+          </div>
+          <div class="input_field">
+            <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+            <input
+              type="password"
+              name="password"
+              placeholder="Senha"
+              required
+              formControlName="password"
+            />
+            <app-mensagem
+              *ngIf="
+                novoUsuarioForm.get('password')?.errors?.['required'] &&
+                novoUsuarioForm.get('password')?.touched
+              "
+              mensagem="Senha obrigatória;
+                        A senha necessita ter no mínimo 8 caracteres, 1 letra maiúscula, 1 letra minúscula, 1 caracter especial e 1 número ao menos"
+            ></app-mensagem>
+          </div>
+          <div class="input_field">
+            <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+            <input
+              type="password"
+              name="password"
+              placeholder="Repita a senha"
+              required
+              formControlName="confirmPassword"
+            />
+            <app-mensagem
+              *ngIf="
+                novoUsuarioForm.get('confirmPassword')?.errors?.['required'] &&
+                novoUsuarioForm.get('confirmPassword')?.touched
+              "
+              mensagem="Confirmar a senha!"
+            ></app-mensagem>
+          </div>
+          <div class="row clearfix">
+            <div class="col_half">
+              <div class="input_field">
+                <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Nome completo"
+                  formControlName="nome"
+                  required
+                  autofocus
+                />
+                <app-mensagem
+                  *ngIf="
+                novoUsuarioForm.get('nome')?.errors?.['required'] &&
+                novoUsuarioForm.get('nome')?.touched
+              "
+                  mensagem="Nome obrigatório!"
+                ></app-mensagem>
+              </div>
+            </div>
+
+            <div class="col_half">
+              <div class="input_field">
+                <span><i aria-hidden="true" class="fa fa-phone"></i></span>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Telefone"
+                  formControlName="telefone"
+                  mask="(00) 00000-0000"
+                />
+                <app-mensagem
+                *ngIf="
+              novoUsuarioForm.get('telefone')?.errors?.['required'] &&
+              novoUsuarioForm.get('telefone')?.touched
+            "
+                mensagem="Telefone obrigatório!"
+              ></app-mensagem>
+              </div>
+            </div>
+
+            <div class="col_half">
+              <div class="input_field">
+                <span
+                  ><i aria-hidden="true" class="fa fa-address-book"></i
+                ></span>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Endereço"
+                  formControlName="endereco"
+                />
+                <app-mensagem
+                *ngIf="
+              novoUsuarioForm.get('endereco')?.errors?.['required'] &&
+              novoUsuarioForm.get('endereco')?.touched
+            "
+                mensagem="Endereço obrigatório!"
+              ></app-mensagem>
+              </div>
+            </div>
+          </div>
+
+          <input
+            class="button"
+            type="submit"
+            value="Registrar"
+            [disabled]="novoUsuarioForm.invalid"
+          />
+        </form>
+
+        <div class="row">
+          <a [routerLink]="['']">
+            <button type="button" class="btn btn-primary mt-5 col-12">
+              Voltar página inicial
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

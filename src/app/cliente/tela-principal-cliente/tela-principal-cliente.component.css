@@ -1,0 +1,181 @@
+.retangulo_superior {
+  position: absolute;
+  width: 100%;
+  height: 10%;
+  left: 0px;
+  top: 0px;
+  background: #2337ea;
+}
+
+.retangulo_superior-saudacao_inicial {
+  position: relative;
+  margin-top: 20px;
+  text-align: center;
+
+  font-family: "Noto Sans Hebrew";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 50px;
+
+  color: #fbecec;
+}
+
+.retangulo_superior-btn_ajuda {
+  position: absolute;
+  width: 82px;
+  height: 36px;
+  top: 5px;
+  left: 70%;
+}
+
+.retangulo_superior-btn_logout {
+  position: absolute;
+  width: 82px;
+  height: 36px;
+  top: 5px;
+  left: 80%;
+}
+
+.retangulo_superior-btn_menu {
+  position: absolute;
+  width: 53px;
+  height: 43px;
+  top: 5px;
+}
+
+.retangulo_saldo {
+  position: absolute;
+  width: 90%;
+  align-self: center;
+  height: 159px;
+  top: 240px;
+  left: 20px;
+
+  background: rgba(196, 196, 196, 0.25);
+  border-radius: 10px;
+}
+
+.retangulo_saldo_disponivel {
+  position: absolute;
+  width: 149px;
+  height: 49px;
+  left: 41px;
+  top: 10%;
+
+  font-family: "Noto Sans Hebrew";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 33px;
+
+  color: #000000;
+  box-sizing: border-box;
+}
+
+.retangulo_saldo_cifrao {
+  position: absolute;
+  width: 51px;
+  height: 40px;
+  left: 41px;
+  top: 40%;
+
+  font-family: "Noto Sans Hebrew";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 54px;
+
+  color: #000000;
+}
+
+.retangulo_saldo-saldo_carteira {
+  position: absolute;
+  width: 156px;
+  height: 40px;
+  left: 98px;
+  top: 40%;
+
+  font-family: "Noto Sans Hebrew";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 54px;
+
+  color: #000000;
+}
+
+.retangulo_graficos_ganhos {
+  position: absolute;
+  width: 90%;
+  height: 350px;
+  left: 23px;
+  top: 420px;
+
+  background: rgba(196, 196, 196, 0.25);
+  border-radius: 10px;
+}
+
+.retangulo_graficos_ganhos-ganho {
+  position: absolute;
+  width: 149px;
+  height: 49px;
+  left: 41px;
+  top: 10%;
+
+  font-family: "Noto Sans Hebrew";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 33px;
+
+  color: #000000;
+
+  box-sizing: border-box;
+}
+
+.retangulo_graficos-grafico{
+  position: absolute;
+  width: 331px;
+  height: 235px;
+  top: 30%;
+}
+
+.retangulo_graficos-botoes_acoes{
+position: absolute;
+width: 140px;
+height: 44px;
+
+
+background: #2337EA;
+border-radius: 50px;
+}
+
+.btnmenu{
+  font-size: 35px;
+  color: #000000;
+  margin-top: -50px;
+  margin-right: 10px;
+}
+
+.retangulo_graficos-texto_botoes_acoes{
+  position: absolute;
+  width: 115px;
+  top: 5%;
+  text-align: center;
+  font-family: 'Noto Sans Hebrew';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 27px;
+
+  color: #FFFFFF;
+}
+
+.retangulo_menu{
+  margin-top: 70px;
+  margin-bottom: 30px;
+}
+
+
+

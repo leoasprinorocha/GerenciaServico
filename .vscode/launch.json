@@ -1,0 +1,36 @@
+{
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+
+    {
+      "type": "firefox",
+      "request": "launch",
+      "reAttach": true,
+      "name": "Launch localhost",
+      "url": "http://localhost/index.html",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "name": "ng serve",
+      "type": "pwa-chrome",
+      "request": "launch",
+      "preLaunchTask": "npm: start",
+      "url": "http://192.168.0.13:45000/"
+    },
+    {
+      "name": "mobile",
+      "type": "pwa-chrome",
+      "request": "launch",
+      "preLaunchTask": "npm: start",
+      "url": "http://192.168.0.2:45000/"
+    },
+    {
+      "name": "ng test",
+      "type": "chrome",
+      "request": "launch",
+      "preLaunchTask": "npm: test",
+      "url": "http://localhost:9876/debug.html"
+    }
+  ]
+}
