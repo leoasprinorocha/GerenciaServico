@@ -1,7 +1,7 @@
 <div *ngIf="rotinas$ | async as rotinas">
   <div class="row">
     <button class="btn btn-aqua rounded-pill" *ngFor="let rotina of rotinas">
-      {{ rotina.descricaoRotina }}
+      <a [routerLink]="[rotina.urlRotina]">{{ rotina.descricaoRotina }}</a>
     </button>
   </div>
 </div>

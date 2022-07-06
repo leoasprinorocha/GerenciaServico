@@ -1,3 +1,5 @@
+import { UsuarioRoutingModule } from './usuario/usuario-routing.module';
+import { UsuarioModule } from './usuario/usuario.module';
 import { CabecalhoModule } from './componentes/cabecalho/cabecalho.module';
 
 import { UteisModule } from './uteis/uteis.module';
@@ -13,6 +15,7 @@ import { LoadingInterceptor } from './uteis/loading.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { NgxMaskModule } from 'ngx-mask';
+import { AreaModule } from './area/area.module';
 
 
 @NgModule({
@@ -20,14 +23,17 @@ import { NgxMaskModule } from 'ngx-mask';
   imports: [
     BrowserModule,
     HomeModule,
+    AreaModule,
     HttpClientModule,
     RouterModule,
     AppRoutingModule,
     ClienteRoutingModule,
+    UsuarioRoutingModule,
     UteisModule,
     BrowserAnimationsModule,
     MatDialogModule,
     CabecalhoModule,
+    UsuarioModule,
     NgxMaskModule.forRoot({
       dropSpecialCharacters: false
     })

@@ -1,23 +1,15 @@
 import { TelaPrincipalClienteComponent } from './../cliente/tela-principal-cliente/tela-principal-cliente.component';
-import { CriausuarioComponent } from './../usuario/criausuario/criausuario.component';
-import { HomeComponent } from './home.component';
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 
 const routes: Routes = [
   {
-    path: '',
-    component: HomeComponent,
-  },
-  {
-    path: 'cadastronovousuario',
-    component: CriausuarioComponent,
-  },
-  {
     path: 'telaprincipal',
-    component: TelaPrincipalClienteComponent
-  }
+    component: TelaPrincipalClienteComponent,
+  },
+
 
 ];
 
@@ -25,4 +17,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class HomeRoutingModule {}
+export class UsuarioRoutingModule {}

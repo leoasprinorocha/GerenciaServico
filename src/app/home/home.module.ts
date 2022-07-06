@@ -1,4 +1,5 @@
-import { AutenticacaoModule } from './../autenticacao/autenticacao.module';
+import { UsuarioModule } from './../usuario/usuario.module';
+import { CriausuarioComponent } from './../usuario/criausuario/criausuario.component';
 import { CabecalhoModule } from './../componentes/cabecalho/cabecalho.module';
 import { MensagemComponent } from './../uteis/mensagem/mensagem.component';
 import { UteisModule } from './../uteis/uteis.module';
@@ -19,8 +20,6 @@ import { NgxMaskModule } from 'ngx-mask';
     HomeComponent,
     CadastroNovoClienteComponent,
     MenuComponent,
-
-
   ],
   imports: [
     CommonModule,
@@ -29,6 +28,7 @@ import { NgxMaskModule } from 'ngx-mask';
     HttpClientModule,
     UteisModule,
     ReactiveFormsModule,
+    UsuarioModule,
     CabecalhoModule,
     NgxMaskModule.forChild()
   ],

@@ -1,0 +1,159 @@
+<div class="form_wrapper">
+  <div class="form_container">
+    <div class="title_container">
+      <h2>Cadastro de usuário</h2>
+    </div>
+    <div class="row clearfix">
+      <div class="">
+        <form [formGroup]="novoUsuarioForm" (submit)="cadastrar()">
+          <div class="input_field">
+            <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              required
+              formControlName="email"
+            />
+            <app-mensagem
+              *ngIf="
+                !novoUsuarioForm.get('email')?.touched &&
+                novoUsuarioForm.get('email')?.errors?.['required']
+
+              "
+              mensagem="Email obrigatório"
+            ></app-mensagem>
+          </div>
+
+          <div class="input_field">
+            <span><i aria-hidden="true" class="fa fa-user"></i></span>
+            <input
+              type="text"
+              name="nome"
+              placeholder="Nome completo"
+              required
+              formControlName="nomeCompleto"
+            />
+            <app-mensagem
+              *ngIf="
+                !novoUsuarioForm.get('nomeCompleto')?.touched &&
+                novoUsuarioForm.get('nomeCompleto')?.errors?.['required']
+
+              "
+              mensagem="Nome obrigatório"
+            ></app-mensagem>
+          </div>
+
+          <div class="input_field">
+            <span><i aria-hidden="true" class="fa fa-map"></i></span>
+            <input
+              type="text"
+              name="endereco"
+              placeholder="Endereço"
+              required
+              formControlName="endereco"
+            />
+          </div>
+
+          <div class="input_field">
+            <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+            <input
+              type="password"
+              name="password"
+              placeholder="Senha"
+              required
+              formControlName="password"
+            />
+            <app-mensagem
+              *ngIf="
+                !novoUsuarioForm.get('password')?.touched &&
+                novoUsuarioForm.get('password')?.errors?.['required']
+              "
+              mensagem="Senha obrigatória. Mínimo 8 caracteres, 1 letra minúscula, 1 maiúscula e 1 número"
+            ></app-mensagem>
+          </div>
+
+          <div class="input_field">
+            <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+            <input
+              type="password"
+              name="password"
+              placeholder="Confirme a senha"
+              required
+              formControlName="confirmPassword"
+            />
+            <app-mensagem
+              *ngIf="novoUsuarioForm.get('confirmPassword')?.value != novoUsuarioForm.get('password')?.value"
+
+              mensagem="As senhas devem ser idênticas"
+            ></app-mensagem>
+          </div>
+
+          <mat-form-field class="col-7">
+            <mat-select
+              class="mt-3"
+              name="area"
+              placeholder="Selecione uma area"
+              required
+              formControlName="areaSelect"
+            >
+              <mat-option
+                (onSelectionChange)="changeArea($event)"
+                *ngFor="let area of areasArray"
+                [value]="area.idArea"
+              >
+                {{ area.nomeArea }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <app-mensagem
+            *ngIf="!novoUsuarioForm.get('areaSelect')?.touched &&
+            novoUsuarioForm.get('areaSelect')?.errors?.['required']"
+            mensagem="Obrigatório escolher uma area"
+          ></app-mensagem>
+
+          <br />
+
+          <mat-form-field class="col-7">
+            <mat-select
+              class="mt-3"
+              name="permissao"
+              placeholder="Permissão do usuário"
+              required
+              formControlName="permissaoSelect"
+            >
+              <mat-option
+                (onSelectionChange)="changePermissao($event)"
+                *ngFor="let permissao of permissoesArray"
+                [value]="permissao.idPermissao"
+              >
+                {{ permissao.descricaoPermissao }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <app-mensagem
+            *ngIf="!novoUsuarioForm.get('permissaoSelect')?.touched && novoUsuarioForm.get('permissaoSelect')?.errors?.['required']"
+            mensagem="Obrigatório escolher a permissão"
+          ></app-mensagem>
+
+          <input
+            class="button mt-5 col-6"
+            type="submit"
+            value="Cadastrar"
+            [disabled]="novoUsuarioForm.invalid"
+          />
+        </form>
+
+        <div class="row">
+          <button
+            type="button"
+            class="btn btn-primary mt-5 col-12"
+            onclick="history.back()"
+          >
+            Voltar página inicial
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
