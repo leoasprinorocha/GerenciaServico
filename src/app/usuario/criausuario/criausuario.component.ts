@@ -1,13 +1,14 @@
+import { RegistroUsuario } from './../../Models/registrausuario';
 import { Router } from '@angular/router';
 import { UsuarioService } from './../../autenticacao/usuario/usuario.service';
 import { EventsHandlerComponent } from './../../uteis/events-handler/events-handler.component';
 import { AreaService } from './../../area/area.service';
-import { Area } from './../../area/area';
-import { RegistroUsuario } from './registrausuario';
+import { Area } from '../../Models/area';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { Permissao } from 'src/app/autenticacao/usuario/permissao';
+import { Permissao } from 'src/app/Models/permissao';
+
 
 
 
@@ -69,12 +70,11 @@ export class CriausuarioComponent implements OnInit {
     var response = this.usuarioService.cadastraUsuario(this.novoUsuario).subscribe(
       (data) =>{
         this.router.navigate(['clientelogado']);
-        alert(data);
+        alert(data.message);
       },
       (error) =>{
-        alert('O')
+        alert('Erro ao cadastrar cliente')
       }
     )
-    alert(response);
   }
 }

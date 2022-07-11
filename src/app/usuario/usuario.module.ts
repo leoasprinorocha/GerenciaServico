@@ -1,3 +1,4 @@
+import { ClienteModule } from './../cliente/cliente.module';
 import { MatSelectModule } from '@angular/material/select';
 import { AreaModule } from './../area/area.module';
 import { HomeRoutingModule } from './../home/home-routing.module';
@@ -7,6 +8,7 @@ import { CriausuarioComponent } from './criausuario/criausuario.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UteisModule } from '../uteis/uteis.module';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
 
 
 @NgModule({
@@ -20,7 +22,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     FormsModule,
     MatSelectModule,
     ReactiveFormsModule,
-    HomeRoutingModule,
+    HomeRoutingModule
   ],
   exports: [CriausuarioComponent],
 })

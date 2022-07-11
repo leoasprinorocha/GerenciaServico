@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Usuario } from './usuario/usuario';
+import { Usuario } from '../Models/usuario';
 
 const KEY = 'token';
 

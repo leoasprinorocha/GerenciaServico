@@ -1,13 +1,13 @@
 import { SerializationHelper } from 'src/app/uteis/serialization-helper';
 import { CustomResponse } from './../../home/custom-response';
-import { RegistroUsuario } from './../../usuario/criausuario/registrausuario';
 import { HttpClient } from '@angular/common/http';
-import { Usuario } from './usuario';
+import { Usuario } from '../../Models/usuario';
 import { TokenService } from './../token.service';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { Permissao } from './permissao';
+import { Permissao } from '../../Models/permissao';
 import { AppComponent } from 'src/app/app.component';
+import { RegistroUsuario } from 'src/app/Models/registrausuario';
 
 @Injectable({
   providedIn: 'root',

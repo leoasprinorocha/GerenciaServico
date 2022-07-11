@@ -2,7 +2,7 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AppComponent } from '../app.component';
-import { Area } from './area';
+import { Area } from '../Models/area';
 
 @Injectable({
   providedIn: 'root'

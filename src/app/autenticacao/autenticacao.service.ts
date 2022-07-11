@@ -4,7 +4,7 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
 import { AppComponent } from '../app.component';
 import { tap } from 'rxjs';
-import { Usuario } from './usuario/usuario';
+import { Usuario } from '../Models/usuario';
 
 @Injectable({
   providedIn: 'root',

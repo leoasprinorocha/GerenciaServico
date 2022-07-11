@@ -1,9 +1,9 @@
 import { TelaPrincipalClienteComponent } from './../../cliente/tela-principal-cliente/tela-principal-cliente.component';
-import { Usuario } from './../../autenticacao/usuario/usuario';
+import { Usuario } from '../../Models/usuario';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { TokenService } from 'src/app/autenticacao/token.service';
-import { Rotina } from './rotina';
+import { Rotina } from '../../Models/rotina';
 import { Observable } from 'rxjs';
 import { AppComponent } from 'src/app/app.component';
 
