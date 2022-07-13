@@ -1,7 +1,6 @@
 import { RegistroUsuario } from './../../Models/registrausuario';
 import { Router } from '@angular/router';
-import { UsuarioService } from './../../autenticacao/usuario/usuario.service';
-import { EventsHandlerComponent } from './../../uteis/events-handler/events-handler.component';
+import { UsuarioService } from '../usuario.service';
 import { AreaService } from './../../area/area.service';
 import { Area } from '../../Models/area';
 import { Component, OnInit } from '@angular/core';

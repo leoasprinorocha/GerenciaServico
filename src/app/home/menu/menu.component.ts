@@ -4,8 +4,9 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { TokenService } from 'src/app/autenticacao/token.service';
 import { Rotina } from '../../Models/rotina';
-import { Observable } from 'rxjs';
+import { Observable, tap, map } from 'rxjs';
 import { AppComponent } from 'src/app/app.component';
+
 
 @Component({
   selector: 'app-menu',
@@ -13,7 +14,7 @@ import { AppComponent } from 'src/app/app.component';
   styleUrls: ['./menu.component.css', './estilobotoes.css'],
 })
 export class MenuComponent {
-  rotinas$!: Observable<Array<Rotina>>;
+  rotinas$!: Observable<Rotina[]>;
 
   constructor(
     private httpClient: HttpClient,
@@ -25,7 +26,7 @@ export class MenuComponent {
   getRotinas() {
     debugger;
     let idPermissao = this.user.idPermissao;
-    this.rotinas$ = this.httpClient.get<Array<Rotina>>(
+    this.rotinas$ = this.httpClient.get<Rotina[]>(
       `${AppComponent.apiUrl}Usuario/RecuperaRotinasUsuario/${idPermissao}`
     );
   }

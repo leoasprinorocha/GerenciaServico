@@ -1,7 +1,9 @@
+<p class="texto-menu">Rotinas permitidas</p>
+<hr>
 <div *ngIf="rotinas$ | async as rotinas">
   <div class="row">
     <a
-      class="btn btn-aqua rounded-pill"
+      class="btn btn-aqua rounded-pill mt-3"
       *ngFor="let rotina of rotinas"
       [routerLink]="[rotina.urlRotina]"
       >{{ rotina.descricaoRotina }}</a

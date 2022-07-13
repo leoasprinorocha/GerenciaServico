@@ -2,17 +2,20 @@ import { ClienteModule } from './../cliente/cliente.module';
 import { MatSelectModule } from '@angular/material/select';
 import { AreaModule } from './../area/area.module';
 import { HomeRoutingModule } from './../home/home-routing.module';
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CriausuarioComponent } from './criausuario/criausuario.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UteisModule } from '../uteis/uteis.module';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+import { AlterausuarioComponent } from './alterausuario/alterausuario.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatCardModule} from '@angular/material/card';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { DetalhesusuarioComponent } from './detalhesusuario/detalhesusuario.component';
 
 
 @NgModule({
-  declarations: [CriausuarioComponent],
+  declarations: [CriausuarioComponent, AlterausuarioComponent, DetalhesusuarioComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
     CommonModule,
@@ -22,8 +25,11 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     FormsModule,
     MatSelectModule,
     ReactiveFormsModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    MatTableModule,
+    MatCardModule,
+    MatToolbarModule
   ],
-  exports: [CriausuarioComponent],
+  exports: [CriausuarioComponent, AlterausuarioComponent],
 })
 export class UsuarioModule {}

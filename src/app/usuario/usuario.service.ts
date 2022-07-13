@@ -1,11 +1,11 @@
 import { SerializationHelper } from 'src/app/uteis/serialization-helper';
-import { CustomResponse } from './../../home/custom-response';
+import { CustomResponse } from '../home/custom-response';
 import { HttpClient } from '@angular/common/http';
-import { Usuario } from '../../Models/usuario';
-import { TokenService } from './../token.service';
+import { Usuario } from '../Models/usuario';
+import { TokenService } from '../autenticacao/token.service';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { Permissao } from '../../Models/permissao';
+import { Permissao } from '../Models/permissao';
 import { AppComponent } from 'src/app/app.component';
 import { RegistroUsuario } from 'src/app/Models/registrausuario';
 
@@ -54,6 +54,13 @@ export class UsuarioService {
       `${AppComponent.apiUrl}Usuario/RecuperaPermissoes`
     );
   }
+
+  recuperaTodosUsuarios(): Observable<Usuario[]> {
+    return this.httpClient.get<Usuario[]>(
+      `${AppComponent.apiUrl}Usuario/RecuperaTodosUsuarios`
+    );
+  }
+
 
   cadastraUsuario(novoUsuario: RegistroUsuario): Observable<any> {
     return this.httpClient

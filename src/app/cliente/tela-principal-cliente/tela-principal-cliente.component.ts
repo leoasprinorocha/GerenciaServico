@@ -14,7 +14,7 @@ export class TelaPrincipalClienteComponent {
   abreMenu(){
     this.dialogRef.open(MenuComponent, {
       height: '500px',
-      width: '300px',
+      width: '500px',
       hasBackdrop: true,
       backdropClass: 'menuModal'
 

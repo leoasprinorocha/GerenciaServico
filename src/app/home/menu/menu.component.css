@@ -1,3 +1,8 @@
 .cdk-overlay-pane{
   background-color: gray;
 }
+
+.texto-menu{
+  text-align: center;
+  font-weight: bold;
+}

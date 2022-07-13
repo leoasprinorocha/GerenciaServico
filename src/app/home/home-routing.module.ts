@@ -1,3 +1,4 @@
+import { AlterausuarioComponent } from './../usuario/alterausuario/alterausuario.component';
 import { TelaPrincipalClienteComponent } from './../cliente/tela-principal-cliente/tela-principal-cliente.component';
 import { CriausuarioComponent } from './../usuario/criausuario/criausuario.component';
 import { HomeComponent } from './home.component';
@@ -13,6 +14,10 @@ const routes: Routes = [
   {
     path: 'cadastronovousuario',
     component: CriausuarioComponent,
+  },
+  {
+    path: 'alterausuario',
+    component: AlterausuarioComponent,
   },
   {
     path: 'telaprincipal',

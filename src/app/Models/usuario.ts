@@ -1,6 +1,6 @@
 export interface Usuario {
-  id?: string;
-  name?: string;
+  idUsuario?: string;
+  nomeCompleto?: string;
   email?: string;
   accessToken?: string;
   descricaoPermissao?: string;
