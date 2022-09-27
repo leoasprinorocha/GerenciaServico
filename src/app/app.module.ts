@@ -1,3 +1,4 @@
+import { AreaRoutingModule } from './area/area-rounting.module';
 import { UsuarioRoutingModule } from './usuario/usuario-routing.module';
 import { UsuarioModule } from './usuario/usuario.module';
 import { CabecalhoModule } from './componentes/cabecalho/cabecalho.module';
@@ -30,6 +31,7 @@ import { AreaModule } from './area/area.module';
     AppRoutingModule,
     ClienteRoutingModule,
     UsuarioRoutingModule,
+    AreaRoutingModule,
     UteisModule,
     BrowserAnimationsModule,
     MatDialogModule,

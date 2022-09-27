@@ -1,23 +1,78 @@
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <i
-        class="fa fa-floppy-o iconeDetalhe"
-        aria-hidden="true"
-        style="font-size: 30px; color: blue"
-      >
-      </i>
-      <p style="font-size: 12px"><b>SALVAR</b></p>
-    </div>
-
-    <div class="col">
-      <i
-        class="fa fa-trash-o iconeDetalhe col-xs-6"
-        aria-hidden="true"
-        style="font-size: 30px; color: red"
-      >
-      </i>
-      <p style="font-size: 12px"><b>EXCLUIR USUÁRIO</b></p>
-    </div>
+<div class="modal-body">
+  <div class="col-12 col-sm-12 form-group">
+    <label class="font-weight-bold labels">Nome</label>
+    <input
+      class="form-group col-12 col-sm-12 validaCliente"
+      id="txtNomeCliente"
+      value="{{ usuarioCarregado.nomeCompleto }}"
+    />
   </div>
+
+  <div class="col-12 col-sm-12 mt-4 form-group">
+    <label class="font-weight-bold labels">Email</label>
+    <input
+      class="form-group col-12 col-sm-12 validaCliente"
+      id="txtEmail"
+      value="{{ usuarioCarregado.email }}"
+      disabled
+    />
+  </div>
+
+  <div class="col-12 col-sm-12 mt-4 form-group">
+    <label class="font-weight-bold labels">Senha</label>
+    <input
+      class="form-group col-12 col-sm-12 validaCliente"
+      id="txtSenha"
+      value="{{ usuarioCarregado.senha }}"
+      disabled
+    />
+  </div>
+
+  <label class="font-weight-bold mt-4 labels">Status</label>
+  <mat-select
+    name="statususuario"
+    placeholder="Selecione um status"
+    (selectionChange)="changeStatus($event)"
+    id="selectEscolaridade"
+    [value]="usuarioCarregado.idStatus"
+  >
+    <mat-option
+      *ngFor="let status of statusUsuariosArray"
+      [value]="status.idStatus"
+    >
+      {{ status.descricaoStatus }}
+    </mat-option>
+  </mat-select>
+
+  <label class="font-weight-bold mt-4 labels">Area</label>
+  <mat-select
+    name="area"
+    placeholder="Selecione uma area"
+    (selectionChange)="changeArea($event)"
+    id="selectArea"
+    [value]="usuarioCarregado.idArea"
+  >
+    <mat-option
+      *ngFor="let area of areasArray"
+      [value]="area.idArea"
+    >
+      {{ area.nomeArea }}
+    </mat-option>
+  </mat-select>
+
+  <label class="font-weight-bold mt-4 labels">Permissão</label>
+  <mat-select
+    name="permissao"
+    placeholder="Selecione uma permissão"
+    (selectionChange)="changePermissao($event)"
+    id="selectPermissao"
+    [value]="usuarioCarregado.idPermissao"
+  >
+    <mat-option
+      *ngFor="let permissao of permissoesArray"
+      [value]="permissao.idPermissao"
+    >
+      {{ permissao.descricaoPermissao }}
+    </mat-option>
+  </mat-select>
 </div>

@@ -1,10 +1,11 @@
+import { Router } from '@angular/router';
 import { DetalhesusuarioComponent } from './../detalhesusuario/detalhesusuario.component';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { UsuarioService } from '../usuario.service';
 import { Usuario } from './../../Models/usuario';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-alterausuario',
@@ -12,29 +13,32 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   styleUrls: ['./alterausuario.component.css'],
 })
 export class AlterausuarioComponent implements OnInit {
-
   displayedColumns: string[] = [
     'nomeCompleto',
     'descricaoPermissao',
-    'detalhes'
+    'descricaoStatus',
+    'detalhes',
   ];
   dataSource!: MatTableDataSource<any>;
+  usuarioCarregado!: Usuario;
+
 
   constructor(
     private dialogRef: MatDialog,
-    private usuarioService: UsuarioService
+    private usuarioService: UsuarioService,
+    private detalheUsuarioComponent: DetalhesusuarioComponent,
+    private router : Router
   ) {}
 
   ngOnInit(): void {
     debugger;
     this.dialogRef.closeAll();
     this.usuarioService.recuperaTodosUsuarios().subscribe(
-      data =>{this.dataSource = new MatTableDataSource(data);
-              },
+      (data) => {
+        this.dataSource = new MatTableDataSource(data);
+      },
       (error) => console.log('Error : ', error)
     );
-
-    console.log(this.dataSource);
   }
 
   applyFilter(event: Event) {
@@ -43,13 +47,9 @@ export class AlterausuarioComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  carregarDetalheUsuario(event:any){
-    this.dialogRef.open(DetalhesusuarioComponent, {
-      height: '700px',
-      width: '600px',
-      hasBackdrop: true,
-      backdropClass: 'menuModal'
-
-    })
+  carregarDetalheUsuario(event: any) {
+    debugger
+    this.usuarioService.idUsuario = event.target.dataset.idusuario;
+    this.detalheUsuarioComponent.abreModalDetalhesUsuario();
   }
 }

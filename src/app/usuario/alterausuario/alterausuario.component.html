@@ -26,13 +26,20 @@
       </td>
     </ng-container>
 
+    <ng-container matColumnDef="descricaoStatus">
+      <th mat-header-cell *matHeaderCellDef>Status</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.descricaoStatus }}
+      </td>
+    </ng-container>
+
     <ng-container matColumnDef="detalhes">
       <th mat-header-cell *matHeaderCellDef>Detalhar</th>
       <td mat-cell *matCellDef="let element">
         <i
           class="fa fa-eye iconeDetalhe"
           aria-hidden="true"
-          [attr.data-sectionvalue]="element.idUsuario"
+          [attr.data-idusuario]="element.idUsuario"
           (click)="carregarDetalheUsuario($event)"
         ></i>
       </td>

@@ -14,6 +14,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { DetalhesusuarioComponent } from './detalhesusuario/detalhesusuario.component';
 
 
+
 @NgModule({
   declarations: [CriausuarioComponent, AlterausuarioComponent, DetalhesusuarioComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

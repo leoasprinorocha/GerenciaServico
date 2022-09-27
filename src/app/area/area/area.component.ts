@@ -1,5 +1,7 @@
+import { MatDialog } from '@angular/material/dialog';
 import { AreaService } from './../area.service';
 import { Component, Injectable, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +14,12 @@ import { Component, Injectable, OnInit } from '@angular/core';
 })
 export class AreaComponent implements OnInit {
 
-  constructor(private areaService: AreaService) { }
+  displayedColumns: string[] = [
+    'nomeArea',
+  ];
+  dataSource!: MatTableDataSource<any>;
+
+  constructor(private areaService: AreaService, private dialogRef: MatDialog) { }
 
 
   getAreas(){
@@ -20,6 +27,13 @@ export class AreaComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.dialogRef.closeAll();
+  }
+
+  applyFilter(event: Event) {
+    debugger;
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
 }
