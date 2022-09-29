@@ -1,10 +1,11 @@
 import { Router } from '@angular/router';
 import { DetalhesusuarioComponent } from './../detalhesusuario/detalhesusuario.component';
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { UsuarioService } from '../usuario.service';
 import { Usuario } from './../../Models/usuario';
+import { MatPaginator } from '@angular/material/paginator';
 
 
 @Component({
@@ -21,6 +22,7 @@ export class AlterausuarioComponent implements OnInit {
   ];
   dataSource!: MatTableDataSource<any>;
   usuarioCarregado!: Usuario;
+  @ViewChild('paginator') paginator!: MatPaginator;
 
 
   constructor(
@@ -36,6 +38,7 @@ export class AlterausuarioComponent implements OnInit {
     this.usuarioService.recuperaTodosUsuarios().subscribe(
       (data) => {
         this.dataSource = new MatTableDataSource(data);
+        this.dataSource.paginator = this.paginator;
       },
       (error) => console.log('Error : ', error)
     );
@@ -45,6 +48,7 @@ export class AlterausuarioComponent implements OnInit {
     debugger;
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+
   }
 
   carregarDetalheUsuario(event: any) {

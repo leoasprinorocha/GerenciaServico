@@ -1,3 +1,6 @@
+import { ClienteModule } from './cliente/cliente.module';
+import { PlanosModule } from './planos/planos.module';
+import { PlanoRoutingModule } from './planos/plano-routing.module';
 import { AreaRoutingModule } from './area/area-rounting.module';
 import { UsuarioRoutingModule } from './usuario/usuario-routing.module';
 import { UsuarioModule } from './usuario/usuario.module';
@@ -17,6 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { NgxMaskModule } from 'ngx-mask';
 import { AreaModule } from './area/area.module';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
 
 
 
@@ -32,6 +36,9 @@ import { AreaModule } from './area/area.module';
     ClienteRoutingModule,
     UsuarioRoutingModule,
     AreaRoutingModule,
+    PlanoRoutingModule,
+    PlanosModule,
+    ClienteModule,
     UteisModule,
     BrowserAnimationsModule,
     MatDialogModule,
@@ -46,7 +53,8 @@ import { AreaModule } from './area/area.module';
       provide: HTTP_INTERCEPTORS,
       useClass: LoadingInterceptor,
       multi: true,
-    }
+    },
+    { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }
   ],
   bootstrap: [AppComponent],
 })

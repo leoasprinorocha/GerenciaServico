@@ -1,6 +1,7 @@
-export interface Area{
-  idArea:number,
-  nomeArea:string,
-  numeroArea:number,
-  dataCriacao:Date
+export class Area{
+  idArea!:number;
+  nomeArea!:string;
+  numeroArea!:number;
+  dataCriacao!:Date;
+  dataCriacaoString!:string;
 }

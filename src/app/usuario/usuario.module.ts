@@ -12,6 +12,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { DetalhesusuarioComponent } from './detalhesusuario/detalhesusuario.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 
@@ -29,7 +30,8 @@ import { DetalhesusuarioComponent } from './detalhesusuario/detalhesusuario.comp
     HomeRoutingModule,
     MatTableModule,
     MatCardModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatPaginatorModule
   ],
   exports: [CriausuarioComponent, AlterausuarioComponent],
 })

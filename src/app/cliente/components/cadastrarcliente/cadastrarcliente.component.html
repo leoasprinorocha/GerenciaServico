@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="title_container mt-3">
+    <h2>Cadastro de cliente</h2>
+  </div>
+  <div class="col-12 col-sm-12 form-group">
+    <label class="font-weight-bold labels">Nome</label>
+    <input
+      class="form-group col-12 col-sm-12 validaCliente"
+      id="nomeCliente"
+    />
+  </div>
+
+  <div class="col-12 col-sm-12 mt-4 form-group">
+    <label class="font-weight-bold labels">Telefone</label>
+    <input
+      class="form-group col-12 col-sm-12 validaCliente"
+      id="telefoneCliente"
+      type="number"
+    />
+  </div>
+
+  <label class="font-weight-bold labels mt-4">Data vencimento</label>
+  <br>
+  <mat-form-field appearance="fill" class="example-form-field input_form">
+    <mat-label>Escolha uma data</mat-label>
+    <input matInput [min]="todayDate" [matDatepicker]="datepicker" name="datanascimento" formControlName="datanascimento" required>
+    <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+    <mat-datepicker #datepicker>
+      <mat-datepicker-actions>
+        <button mat-button matDatepickerCancel>Cancelar</button>
+        <button mat-raised-button color="primary" matDatepickerApply>Escolher</button>
+      </mat-datepicker-actions>
+    </mat-datepicker>
+  </mat-form-field>
+</div>
+
+<div class="row d-flex justify-content-center mt-3">
+  <button class="button btn-success col-4" (click)="adicionarCliente()">SALVAR</button>
+</div>
+

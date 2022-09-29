@@ -1,3 +1,4 @@
+import { DetalhesAreaComponent } from './detalhesarea/detalhesarea.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -8,6 +9,7 @@ import { HomeRoutingModule } from '../home/home-routing.module';
 import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 
@@ -24,10 +26,12 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatTableModule,
     MatCardModule,
     MatToolbarModule,
-    MatDialogModule
+    MatDialogModule,
+    MatPaginatorModule
   ],
   exports:[
-    AreaComponent
+    AreaComponent,
+
   ]
 })
 export class AreaModule { }

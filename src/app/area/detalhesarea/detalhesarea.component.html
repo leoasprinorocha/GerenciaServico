@@ -1,0 +1,36 @@
+<div class="contaier">
+  <div class="col-12 col-sm-12 form-group">
+    <label class="font-weight-bold labels">Nome</label>
+    <input
+      class="form-group col-12 col-sm-12 validaCliente"
+      id="txtNomeArea"
+      value="{{ areaCarregada.nomeArea }}"
+    />
+  </div>
+
+  <div class="col-12 col-sm-12 mt-4 form-group">
+    <label class="font-weight-bold labels">Número area</label>
+    <input
+      class="form-group col-12 col-sm-12 validaCliente"
+      id="txtNumeroArea"
+      value="{{ areaCarregada.numeroArea }}"
+      type="number"
+    />
+  </div>
+
+  <div class="col-12 col-sm-12 mt-4 form-group">
+    <label class="font-weight-bold labels">Data criação</label>
+    <input
+      class="form-group col-12 col-sm-12 validaCliente"
+      id="txtEmail"
+      value="{{ areaCarregada.dataCriacaoString }}"
+      disabled
+    />
+  </div>
+</div>
+
+<div class="row linhaBotoes">
+  <button class="button btn-success" (click)="salvarArea()">SALVAR</button>
+  <button class="button btn-danger mt-2" (click)="fechaModal()">CANCELAR</button>
+</div>
+

@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CadastroNovoClienteComponent } from './cadastro-novo-cliente/cadastro-novo-cliente.component';
 import { MenuComponent } from './menu/menu.component';
 import { NgxMaskModule } from 'ngx-mask';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 
@@ -30,6 +31,7 @@ import { NgxMaskModule } from 'ngx-mask';
     ReactiveFormsModule,
     UsuarioModule,
     CabecalhoModule,
+    MatPaginatorModule,
     NgxMaskModule.forChild()
   ],
   exports:[

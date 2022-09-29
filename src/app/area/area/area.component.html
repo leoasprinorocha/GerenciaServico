@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card class="col-12">
   <mat-toolbar color="primary">
     <mat-toolbar-row>
       <span>Areas do sistema</span>
@@ -13,34 +13,31 @@
     #input
   />
 
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 mt-3">
-    <ng-container matColumnDef="nomeCompleto">
+  <table
+    mat-table
+    [dataSource]="dataSource"
+    class="mat-elevation-z8 mt-3 col-12"
+  >
+    <ng-container matColumnDef="nomeArea">
       <th mat-header-cell *matHeaderCellDef>Nome</th>
-      <td mat-cell *matCellDef="let element">{{ element.nomeCompleto }}</td>
+      <td mat-cell *matCellDef="let element">{{ element.nomeArea }}</td>
     </ng-container>
 
-    <ng-container matColumnDef="descricaoPermissao">
-      <th mat-header-cell *matHeaderCellDef>Permissão</th>
+    <ng-container matColumnDef="numeroArea">
+      <th mat-header-cell *matHeaderCellDef>Número</th>
       <td mat-cell *matCellDef="let element">
-        {{ element.descricaoPermissao }}
+        {{ element.numeroArea }}
       </td>
     </ng-container>
 
-    <ng-container matColumnDef="descricaoStatus">
-      <th mat-header-cell *matHeaderCellDef>Status</th>
-      <td mat-cell *matCellDef="let element">
-        {{ element.descricaoStatus }}
-      </td>
-    </ng-container>
-
-    <ng-container matColumnDef="detalhes">
+    <ng-container matColumnDef="idArea">
       <th mat-header-cell *matHeaderCellDef>Detalhar</th>
       <td mat-cell *matCellDef="let element">
         <i
           class="fa fa-eye iconeDetalhe"
           aria-hidden="true"
-          [attr.data-idusuario]="element.idUsuario"
-
+          (click)="detalharArea($event)"
+          [attr.data-idarea]="element.idArea"
         ></i>
       </td>
     </ng-container>
@@ -56,4 +53,9 @@
     </tr>
   </table>
 </mat-card>
-
+<mat-paginator
+  #paginator
+  [pageSizeOptions]="[5]"
+  showFirstLastButtons
+  hidePageSize
+></mat-paginator>

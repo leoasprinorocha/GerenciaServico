@@ -1,0 +1,25 @@
+
+<div class="container">
+  <div class="title_container mt-3">
+    <h2>Cadastro de plano</h2>
+  </div>
+  <div class="col-12 col-sm-12 form-group">
+    <label class="font-weight-bold labels">Nome plano</label>
+    <br>
+    <input
+      class="form-group col-8 col-sm-8 validaCliente"
+      id="nomePlano"
+    />
+  </div>
+
+  <div class="col-12 col-sm-12 mt-4 form-group">
+    <label class="font-weight-bold labels">Valor plano</label>
+    <br>
+    <input class="form-group col-8 col-sm-8 validaCliente" id="valorPlano" currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" />
+  </div>
+</div>
+
+<div class="row d-flex justify-content-center mt-3">
+  <button class="button btn-success col-4" (click)="adicionarPlano()">SALVAR</button>
+</div>
+
