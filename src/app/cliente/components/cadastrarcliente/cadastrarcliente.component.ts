@@ -1,3 +1,4 @@
+import { MatDialog } from '@angular/material/dialog';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 export class CadastrarclienteComponent implements OnInit {
   todayDate:Date = new Date();
 
-  constructor() { }
+  constructor(private dialogRef: MatDialog) { }
 
   ngOnInit(): void {
+    this.dialogRef.closeAll();
   }
 
   adicionarCliente(){

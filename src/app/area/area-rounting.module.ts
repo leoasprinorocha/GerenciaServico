@@ -1,3 +1,4 @@
+import { AdicionaenderecoComponent } from './adicionaendereco/adicionaendereco.component';
 import { AdicionarareaComponent } from './adicionararea/adicionararea.component';
 import { AreaComponent } from './area/area.component';
 import { NgModule } from '@angular/core';
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: 'criararea',
     component: AdicionarareaComponent
+  },
+  {
+    path: 'adicionarendereco',
+    component: AdicionaenderecoComponent
   }
 ];
 

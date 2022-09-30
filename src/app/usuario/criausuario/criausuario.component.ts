@@ -8,9 +8,6 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { MatDialog } from '@angular/material/dialog';
 import { Permissao } from 'src/app/Models/permissao';
 
-
-
-
 @Component({
   selector: 'app-criausuario',
   templateUrl: './criausuario.component.html',

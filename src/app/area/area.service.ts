@@ -1,3 +1,4 @@
+import { Endereco } from './../Models/endereco';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -36,6 +37,19 @@ export class AreaService {
     return this.httpClient.post<HttpResponse>(
       `${AppComponent.apiUrl}Area/CadastrarArea`,
       area
+    );
+  }
+
+  cadastrarEndereco(endereco: Endereco): Observable<HttpResponse> {
+    return this.httpClient.post<HttpResponse>(
+      `${AppComponent.apiUrl}Area/CadastrarEndereco`,
+      endereco
+    );
+  }
+
+  getEnderecos(idArea?: number): Observable<Endereco[]> {
+    return this.httpClient.get<Endereco[]>(
+      `${AppComponent.apiUrl}Area/RecuperaTodosEnderecos/${idArea}`
     );
   }
 }
