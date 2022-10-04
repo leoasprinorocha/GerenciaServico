@@ -69,9 +69,9 @@ export class AdicionaenderecoComponent implements OnInit {
     endereco.nomeBairro = String($('#nomeBairro').val());
     endereco.cep = String($('#cep').val());
     endereco.idArea = this.idAreaForm;
+    let enderecos: Endereco[] = [];
     this.areaService.cadastrarEndereco(endereco).subscribe((data) => {
       alert(data.message);
-      });
       if(this.areaService.abreOuFechaModalCadastroEndereco){
         this.areaService.abreOuFechaModalCadastroEndereco = false;
         this.dialogRef.closeAll();
