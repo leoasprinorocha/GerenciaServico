@@ -1,7 +1,6 @@
 import { NgxMaskModule } from 'ngx-mask';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { AdicionaenderecoComponent } from './adicionaendereco/adicionaendereco.component';
-import { DetalhesAreaComponent } from './detalhesarea/detalhesarea.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';

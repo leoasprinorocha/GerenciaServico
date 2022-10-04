@@ -11,6 +11,7 @@ import { HttpResponse } from '../Models/httpresponse';
 })
 export class AreaService {
   public idArea!: number;
+  public abreOuFechaModalCadastroEndereco: boolean = false;
 
   constructor(private httpClient: HttpClient) {}
 
