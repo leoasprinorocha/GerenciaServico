@@ -1,3 +1,4 @@
+import { ClientesComponent } from './components/clientes/clientes.component';
 import { CadastrarclienteComponent } from './components/cadastrarcliente/cadastrarcliente.component';
 import { CabecalhoModule } from './../componentes/cabecalho/cabecalho.module';
 import { TelaPrincipalClienteComponent } from './tela-principal-cliente/tela-principal-cliente.component';
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: 'adicionarcliente',
     component: CadastrarclienteComponent
+  },
+  {
+    path: 'clientes',
+    component: ClientesComponent
   }
 ];
 

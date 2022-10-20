@@ -18,4 +18,10 @@ export class ClienteService {
       cliente
     );
   }
+
+  recuperaClientes(idArea: number): Observable<Cliente[]> {
+    return this.httpClient.get<Cliente[]>(
+      `${AppComponent.apiUrl}Cliente/RecuperaTodosClientes/${idArea}`,
+    );
+  }
 }

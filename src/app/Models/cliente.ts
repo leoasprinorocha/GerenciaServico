@@ -1,5 +1,3 @@
-import { NumberInput } from "@angular/cdk/coercion";
-
 export class Cliente{
   idCliente!: number;
   nome!: string;
@@ -10,4 +8,5 @@ export class Cliente{
   idEndereco!: number;
   idPlano!: number;
   idStatus!: number;
+  descricaoStatus!: string;
 }

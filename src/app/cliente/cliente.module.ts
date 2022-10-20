@@ -19,9 +19,10 @@ import { MatInputModule } from '@angular/material/input';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { CurrencyMaskModule } from 'ng2-currency-mask';
 import { NgxMaskModule } from 'ngx-mask';
+import { ClientesComponent } from './components/clientes/clientes.component';
 
 @NgModule({
-  declarations: [TelaPrincipalClienteComponent, CadastrarclienteComponent],
+  declarations: [TelaPrincipalClienteComponent, CadastrarclienteComponent, ClientesComponent],
   imports: [
     CommonModule,
     ClienteRoutingModule,
@@ -41,7 +42,8 @@ import { NgxMaskModule } from 'ngx-mask';
     MatInputModule,
     MatAutocompleteModule,
     CurrencyMaskModule,
-    NgxMaskModule
+    NgxMaskModule,
+    MatPaginatorModule
 
   ],
   exports: [TelaPrincipalClienteComponent, CadastrarclienteComponent],

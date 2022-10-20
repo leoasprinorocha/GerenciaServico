@@ -28,8 +28,7 @@ export class AlterausuarioComponent implements OnInit {
   constructor(
     private dialogRef: MatDialog,
     private usuarioService: UsuarioService,
-    private detalheUsuarioComponent: DetalhesusuarioComponent,
-    private router : Router
+    private detalheUsuarioComponent: DetalhesusuarioComponent
   ) {}
 
   ngOnInit(): void {

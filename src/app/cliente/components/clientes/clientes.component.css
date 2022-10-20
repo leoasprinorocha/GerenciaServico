@@ -1,0 +1,19 @@
+.ATIVO{
+  background-color: #5186EF;
+}
+
+.BLOQUEADO{
+  background-color: red;
+}
+
+.INATIVO{
+  background-color: gray;
+}
+
+.mat-table {
+  overflow-x: scroll;
+  max-width: 99%;
+  border-collapse: separate!important;
+  border-spacing:0 4px!important;
+}
+
