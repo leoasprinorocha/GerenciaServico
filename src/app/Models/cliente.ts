@@ -9,4 +9,5 @@ export class Cliente{
   idPlano!: number;
   idStatus!: number;
   descricaoStatus!: string;
+  clienteJaAtivado!: boolean;
 }

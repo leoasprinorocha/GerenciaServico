@@ -102,6 +102,17 @@
       </mat-option>
     </mat-select>
   </mat-form-field>
+
+  <br>
+
+  <label class="font-weight-bold labels mt-4">Deseja já ativar cliente?</label>
+  <br>
+  <span id="avisoAtivacao">Ao selecionar "SIM", uma fatura já será gerada para o cliente próximo mês com a data de vencimento selecionada</span>
+  <br>
+  <mat-radio-group aria-label="Select an option">
+    <mat-radio-button value="1" (change)="changeAtivacao($event)">SIM</mat-radio-button>
+    <mat-radio-button value="0" (change)="changeAtivacao($event)">NÃO</mat-radio-button>
+  </mat-radio-group>
 </div>
 
 <div class="row d-flex justify-content-center mt-3">

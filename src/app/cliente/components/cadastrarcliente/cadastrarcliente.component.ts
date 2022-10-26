@@ -2,10 +2,8 @@ import { AdicionaenderecoComponent } from './../../../area/adicionaendereco/adic
 import { ClienteService } from './../../cliente.service';
 import { PlanosService } from './../../../planos/planos.service';
 import { UsuarioService } from './../../../usuario/usuario.service';
-import { AreaService } from 'src/app/area/area.service';
 import { MatDialog } from '@angular/material/dialog';
 import { Component, Injectable, OnInit } from '@angular/core';
-import { Endereco } from 'src/app/Models/endereco';
 import { Usuario } from 'src/app/Models/usuario';
 import { Plano } from 'src/app/Models/plano';
 import { Cliente } from 'src/app/Models/cliente';
@@ -24,10 +22,10 @@ export class CadastrarclienteComponent implements OnInit {
   idEndereco!: number;
   idPlano!: number;
   phoneMask = '(00) 00000-0000';
+  clienteJaAtivado!: boolean;
 
   constructor(
     private dialogRef: MatDialog,
-    private areaService: AreaService,
     private userService: UsuarioService,
     private planoService: PlanosService,
     private clienteService: ClienteService,
@@ -49,6 +47,7 @@ export class CadastrarclienteComponent implements OnInit {
   }
 
   adicionarCliente() {
+    debugger
     let cliente = new Cliente();
     cliente.nome = String($('#nomeCliente').val());
     cliente.telefone = String($('#telefoneCliente').val())
@@ -61,6 +60,7 @@ export class CadastrarclienteComponent implements OnInit {
     cliente.numeroCasa = Number($('#numeroCasaCliente').val());
     cliente.complemento = String($('#complementoCliente').val());
     cliente.idPlano = this.idPlano;
+    cliente.clienteJaAtivado = this.clienteJaAtivado;;
 
     this.clienteService.cadastrarCliente(cliente).subscribe((data) => {
       alert(data.message);
@@ -79,5 +79,10 @@ export class CadastrarclienteComponent implements OnInit {
 
   changePlano(event: any) {
     this.idPlano = Number(event.source.value);
+  }
+
+  changeAtivacao(event: any){
+    debugger
+    this.clienteJaAtivado = Boolean(Number(event.source.value));
   }
 }

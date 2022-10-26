@@ -1,3 +1,4 @@
+import { FaturamentoModule } from './faturamento/faturamento.module';
 import { ClienteModule } from './cliente/cliente.module';
 import { PlanosModule } from './planos/planos.module';
 import { PlanoRoutingModule } from './planos/plano-routing.module';
@@ -40,6 +41,7 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
     PlanosModule,
     ClienteModule,
     UteisModule,
+    FaturamentoModule,
     BrowserAnimationsModule,
     MatDialogModule,
     CabecalhoModule,

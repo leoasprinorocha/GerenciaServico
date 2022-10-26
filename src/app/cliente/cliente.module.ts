@@ -12,17 +12,22 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
-import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { CurrencyMaskModule } from 'ng2-currency-mask';
 import { NgxMaskModule } from 'ngx-mask';
 import { ClientesComponent } from './components/clientes/clientes.component';
+import { MatRadioModule } from '@angular/material/radio';
 
 @NgModule({
-  declarations: [TelaPrincipalClienteComponent, CadastrarclienteComponent, ClientesComponent],
+  declarations: [
+    TelaPrincipalClienteComponent,
+    CadastrarclienteComponent,
+    ClientesComponent,
+  ],
   imports: [
     CommonModule,
     ClienteRoutingModule,
@@ -43,8 +48,8 @@ import { ClientesComponent } from './components/clientes/clientes.component';
     MatAutocompleteModule,
     CurrencyMaskModule,
     NgxMaskModule,
-    MatPaginatorModule
-
+    MatPaginatorModule,
+    MatRadioModule,
   ],
   exports: [TelaPrincipalClienteComponent, CadastrarclienteComponent],
 })

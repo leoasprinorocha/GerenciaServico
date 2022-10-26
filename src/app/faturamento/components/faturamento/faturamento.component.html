@@ -1,0 +1,20 @@
+<mat-card>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span>FATURAMENTO</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <label>Buscar por: </label>
+
+  <br>
+
+  <mat-radio-group aria-label="Select an option">
+    <mat-radio-button value="1">Endereço</mat-radio-button>
+    <mat-radio-button value="0">Nome cliente</mat-radio-button>
+  </mat-radio-group>
+
+  <input id="inputBusca" class="col-12" type="text"/>
+
+  <button class="button btnbusca" (click)="buscar()">BUSCAR</button>
+</mat-card>

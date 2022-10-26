@@ -1,5 +1,3 @@
-import { data } from 'jquery';
-import { CadastrarclienteComponent } from './../../cliente/components/cadastrarcliente/cadastrarcliente.component';
 import { Endereco } from './../../Models/endereco';
 import { Usuario } from './../../Models/usuario';
 import { UsuarioService } from './../../usuario/usuario.service';
@@ -7,7 +5,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { AreaService } from 'src/app/area/area.service';
 import { Component, Injectable, OnInit } from '@angular/core';
 import { Area } from 'src/app/Models/area';
-import { Subject, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -25,8 +23,13 @@ export class AdicionaenderecoComponent implements OnInit {
   public idAreaForm: number = 0;
   public user!: Usuario;
   public enderecosObservable = new Observable<Endereco[]>(subscriber => {
+    this.user = new Usuario();
+    this.userService.retornaUsuarioSubject().subscribe((data) => {
+      this.user = data;
+    });
+
     let enderecos: Endereco[] = [];
-    this.areaService.getEnderecos().subscribe((data) => {
+    this.areaService.getEnderecos(this.user.idArea).subscribe((data) => {
       enderecos = data;
       subscriber.next(enderecos);
     });
