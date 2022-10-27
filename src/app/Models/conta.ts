@@ -5,7 +5,8 @@ export class Conta {
   valorTotal!: number | null;
   valorPlano!: number | null;
   taxaServico!: number | null;
-  dataVencimento!: string | null;
+  dataVencimento!: Date | null;
+  dataVencimentoString!: string;
   anoMes!: string;
   idSituacaoConta!: number | null;
   situacaoContaString!: string;
