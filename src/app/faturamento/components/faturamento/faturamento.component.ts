@@ -1,3 +1,4 @@
+import { TratamentofaturaComponent } from './../tratamentofatura/tratamentofatura.component';
 import { FaturamentoService } from './../../faturamento.service';
 import { data } from 'jquery';
 import { BuscaFatura } from './../../../Models/buscafatura';
@@ -25,7 +26,8 @@ export class FaturamentoComponent implements OnInit {
   constructor(
     private dialogRef: MatDialog,
     private userService: UsuarioService,
-    private faturamentoService: FaturamentoService
+    private faturamentoService: FaturamentoService,
+    private tratamentoFaturaComponent: TratamentofaturaComponent
   ) {}
 
   ngOnInit(): void {
@@ -34,6 +36,7 @@ export class FaturamentoComponent implements OnInit {
     this.userService.retornaUsuarioSubject().subscribe((data) => {
       this.user = data;
     });
+
   }
 
   applyFilter(event: Event) {
@@ -64,5 +67,10 @@ export class FaturamentoComponent implements OnInit {
   changeTipoBusca(event: any) {
     debugger;
     this.tipoBusca = String(event.source.value);
+  }
+
+  abreFatura(event: any){
+    this.faturamentoService.idConta = Number(event.target.dataset.idconta);
+    this.tratamentoFaturaComponent.abreModalTratamentoFatura();
   }
 }

@@ -25,3 +25,20 @@ label{
   margin-left: 6px;
   margin-top: 50px;
 }
+
+.GERADA{
+  background-color: gray;
+}
+
+.PAGO{
+  background-color: green;
+}
+
+.VENCIDA{
+  background-color: red;
+}
+
+.iconeDetalhe{
+  font-size: 30px;
+  color: blue;
+}

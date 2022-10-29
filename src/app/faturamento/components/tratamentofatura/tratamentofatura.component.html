@@ -1,0 +1,61 @@
+<div class="contaier">
+  <div class="col-6 col-sm-12 form-group">
+    <label class="font-weight-bold labels">Ano mês</label>
+    <input
+      class="form-group col-12 col-sm-12 inputstandard"
+      id="txtNomeArea"
+      value="{{ contaCarregada.anoMes }}"
+      disabled
+    />
+  </div>
+
+  <div class="col-6 col-sm-12 mt-4 form-group">
+    <label class="font-weight-bold labels">Taxa de serviço</label>
+    <input
+      class="form-group col-12 col-sm-12 inputstandard"
+      id="txtNumeroArea"
+      value="{{ contaCarregada.taxaServico }}"
+      currencyMask
+      [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }"
+      style="text-align: left"
+      disabled
+    />
+  </div>
+
+  <div class="col-6 col-sm-12 mt-4 form-group">
+    <label class="font-weight-bold labels">Valor plano</label>
+    <input
+      class="form-group col-12 col-sm-12 inputstandard"
+      id="txtEmail"
+      currencyMask
+      [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }"
+      value="{{ contaCarregada.valorPlano }}"
+      style="text-align: left"
+      disabled
+    />
+  </div>
+
+  <div class="col-6 col-sm-12 mt-4 form-group">
+    <label class="font-weight-bold labels">Valor total</label>
+    <input
+      class="form-group col-12 col-sm-12 inputstandard"
+      id="txtEmail"
+      value="{{ contaCarregada.valorTotal }}"
+      currencyMask
+      disabled
+      [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }"
+      style="text-align: left"
+    />
+  </div>
+
+  <div class="col-6 col-sm-12 mt-4 form-group">
+    <label class="font-weight-bold labels">Situação</label>
+    <p class="texto-situacao" [ngClass]="[contaCarregada.situacaoContaString]">{{contaCarregada.situacaoContaString}}</p>
+  </div>
+
+</div>
+
+<div class="row linhaBotoes">
+  <button [hidden]="!deveMostrarBotaoPagar"   class="button btn-success" (click)="iniciarTratamentoConta()">PAGAR</button>
+  <button class="button btn-danger mt-2" (click)="fechaModal()">CANCELAR</button>
+</div>

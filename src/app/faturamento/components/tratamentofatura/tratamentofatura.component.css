@@ -1,0 +1,23 @@
+.inputstandard{
+text-align: left;
+}
+
+.linhaBotoes{
+  margin-top: 50px;
+}
+
+.texto-situacao{
+  font-weight: bolder;
+}
+
+.GERADA{
+  color: gray;
+}
+
+.PAGO{
+  color: green;
+}
+
+.VENCIDA{
+  color: red;
+}

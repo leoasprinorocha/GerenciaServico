@@ -10,12 +10,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FaturamentoComponent } from './components/faturamento/faturamento.component';
 import { MatInputModule } from '@angular/material/input';
+import { TratamentofaturaComponent } from './components/tratamentofatura/tratamentofatura.component';
+import { CurrencyMaskModule } from 'ng2-currency-mask';
 
 
 
 @NgModule({
   declarations: [
-    FaturamentoComponent
+    FaturamentoComponent,
+    TratamentofaturaComponent
   ],
   imports: [
     CommonModule,
@@ -27,7 +30,8 @@ import { MatInputModule } from '@angular/material/input';
     HttpClientModule,
     MatTableModule,
     MatPaginatorModule,
-    MatInputModule
+    MatInputModule,
+    CurrencyMaskModule
   ]
 })
 export class FaturamentoModule { }
